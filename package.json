@@ -1,0 +1,33 @@
+{
+  "name": "namaste",
+  "version": "1.0.0",
+  "description": "This is namaste react by aman",
+  "scripts": {
+    "test": "jest",
+    "start":"parcel index.html --open",
+    "build":"parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/friction99/Namaste-React.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "aman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/friction99/Namaste-React/issues"
+  },
+  "homepage": "https://github.com/friction99/Namaste-React#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserslist":[
+    "last 2 version"
+  ]
+}
