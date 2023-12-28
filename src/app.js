@@ -7,12 +7,28 @@ import {createBrowserRouter,RouterProvider,Outlet} from "react-router-dom";
 import Error from "./components/error.jsx";
 import Contact from "./components/Contact.jsx";
 import ResturantMenu from "./components/ResturantMenu.jsx";
+import userData from "./utils/userDatat.js";
+import { useState,useEffect } from "react";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore.js";
+import Cart from "./components/Cart.jsx";
 const AppLayout = ()=>{
+    const [user,setUser] = useState("default");
+    useEffect(()=>{
+    const data = {
+            name:"Aman"
+        }
+        setUser(data.name);
+    },[]);
     return(
-        <div className="App">
-            <Header/>
-            <Outlet/>
-        </div>
+            <Provider store={appStore}>
+                <userData.Provider value={{userName:user,setUser}}>
+                    <div className="App">
+                        <Header/>
+                        <Outlet/>
+                    </div>
+                </userData.Provider>
+            </Provider>
     )
 }
 const appRouter = createBrowserRouter(
@@ -36,6 +52,10 @@ const appRouter = createBrowserRouter(
                 {
                     path:"/resturants/:resId",
                     element:<ResturantMenu/>
+                },
+                {
+                    path:"/cart",
+                    element:<Cart/>
                 }
             ],
             errorElement:<Error/>

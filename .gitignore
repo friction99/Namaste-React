@@ -1,3 +1,9 @@
 node_modules
 .cache
 dist
+babel.config.js
+jest.config.js
+.parcelrc
+.postcssrc
+tailwind.config.js
+.parcel-cache
